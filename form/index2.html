@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<style>
+
+*{margin: 0px; box-sizing: border-box;}
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.form-box {width: 250px; padding: 20px; font-family: 'Roboto', sans-serif;  background: #f5f5f5; border-radius: 15px; border: 1px solid #ddd; margin:20px auto;}
+.form-box ul {list-style: none; padding: 0px; margin: 0px;}
+.form-box li {display: block; margin-bottom: 10px;}
+.form-box li lable {font-size: 14px; letter-spacing: 0.5px; padding-bottom: 5px; display: block; text-transform: capitalize;}
+.form-box li input {width: 100%; padding: 6px; border: 1px solid #ddd;}
+.form-box input#submit {text-transform: capitalize; cursor: pointer; letter-spacing: 0.5px; width: auto; padding: 7px 20px; color: #fff; background: #f11d1d; border: none;}
+.form-box li label.error {color: red; font-size: 13px; letter-spacing: 0.5px; padding-top: 5px; display: block;}
+
+table.form-vale{display: none;}
+table.form-vale td { font-family: 'Roboto', sans-serif; padding: 5px; text-transform:inherit; letter-spacing: 0.5px; font-size: 14px;}
+
+
+
+</style>
+
+
+
+ 
+<form class="form-box" onsubmit="checkvalu()">
+<ul>
+<li><lable>Name *</lable><input type="text" name="name" id="cname" minlength="5" required></li>
+<li><lable>Last *</lable><input type="text" name="last" id="clast" minlength="5" required></li>
+<li><lable>E-mail *</lable><input type="email" name="E-mail" id="cemail" minlength="7" required></li>
+<li><lable>Password *</lable><input type="text" name="Password" id="cpassword" minlength="7" required></li>
+<li><lable>Phone *</lable><input type="number" name="number" id="cnumber" minlength="10" required></li>
+<li><lable>comment *</lable><input type="text" name="comment" id="ccomment" minlength="10" required></li>
+<li><input type="submit" value="submit" id="submit"></li>
+</ul>    
+</form>    
+
+<table class="form-vale">
+<tr><td>Name :</td><td id="formdata1"></td></tr>    
+<tr><td>Last :</td><td id="formdata2"></td></tr> 
+<tr><td>E-mail :</td><td id="formdata3"></td></tr> 
+<tr><td>Password :</td><td id="formdata4"></td></tr> 
+<tr><td>Phone :</td><td id="formdata5"></td></tr> 
+<tr><td>comment :</td><td id="formdata6"></td></tr> 
+</table>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script> -->
+<script>
+// $(document).ready(function (){
+// $(".form-box").validate();
+// });
+
+
+$("#submit").click(function (){
+ var cnamedata = $("#cname").val();
+ var clastdata = $("#clast").val();
+ var cemaildata = $("#cemail").val();
+ var cpassworddata = $("#cpassword").val();
+ var cnumberdata = $("#cnumber").val();
+ var ccommentdata = $("#ccomment").val();
+
+ $("#formdata1").text(cnamedata);
+ $("#formdata2").text(clastdata);
+ $("#formdata3").text(cemaildata);
+ $("#formdata4").text(cpassworddata);
+ $("#formdata5").text(cnumberdata);
+ $("#formdata6").text(ccommentdata);
+
+})
+
+
+function checkvalu(){
+
+if(document.getElementById('cname').value == "") {
+    alert('please enter value');
+    return false;
+}
+
+}   
+
+
+
+</script>
+
+
+    
+</body>
+</html>
